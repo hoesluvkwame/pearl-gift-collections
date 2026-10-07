@@ -1,0 +1,91 @@
+{
+  "name": "Pearls Gift Collection",
+  "rating": 5,
+  "reviewCount": 2,
+  "category": "Cooking appliances and utensils store",
+  "location": "Accra, Ghana",
+  "landmark": "Accra Central & Greater Accra Metro Delivery Hub",
+  "phone": "055 878 8083",
+  "phoneInternational": "+233 55 878 8083",
+  "whatsapp": "233558788083",
+  "openingTime": "08:00",
+  "closingTime": "20:00",
+  "hoursDisplay": "Open Daily · Closes 8:00 PM",
+  "currency": "GH₵",
+  "delivery": {
+    "available": true,
+    "coverage": "Accra Metro & Nationwide Ghana Delivery",
+    "zones": [
+      {
+        "id": "pickup",
+        "name": "Store Pickup (Accra Hub)",
+        "fee": 0,
+        "time": "Same day (Call before coming)"
+      },
+      {
+        "id": "central",
+        "name": "Accra Central / Osu / Labone / Ridge",
+        "fee": 25,
+        "time": "2 - 4 hours"
+      },
+      {
+        "id": "legon",
+        "name": "East Legon / Airport / Dzorwulu / Roman Ridge",
+        "fee": 30,
+        "time": "2 - 4 hours"
+      },
+      {
+        "id": "spintex",
+        "name": "Spintex / Tema / Sakumono / Baatsona",
+        "fee": 35,
+        "time": "Same day"
+      },
+      {
+        "id": "madina",
+        "name": "Madina / Adenta / Haatso / Ashaley Botwe",
+        "fee": 35,
+        "time": "Same day"
+      },
+      {
+        "id": "lapaz",
+        "name": "Lapaz / Achimota / Darkuman / Dansoman",
+        "fee": 30,
+        "time": "2 - 4 hours"
+      },
+      {
+        "id": "kasoa",
+        "name": "Kasoa / Weija / Mallam / McCarthy Hill",
+        "fee": 45,
+        "time": "Same day"
+      },
+      {
+        "id": "intercity",
+        "name": "Intercity Dispatch (Kumasi, Takoradi, Tamale, etc.)",
+        "fee": 60,
+        "time": "24 - 48 hours via VIP/STC"
+      }
+    ]
+  },
+  "paymentMethods": [
+    {
+      "id": "cod",
+      "name": "Cash on Delivery (Accra)",
+      "icon": "cash"
+    },
+    {
+      "id": "momo_mtn",
+      "name": "MTN Mobile Money (MoMo)",
+      "icon": "momo"
+    },
+    {
+      "id": "momo_telecel",
+      "name": "Telecel Cash (Vodafone)",
+      "icon": "telecel"
+    },
+    {
+      "id": "whatsapp_direct",
+      "name": "Order & Pay via WhatsApp",
+      "icon": "whatsapp"
+    }
+  ]
+}

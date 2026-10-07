@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Manager Portal | Pearls Gift Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+  <header class="admin-header">
+    <div class="container admin-header-inner">
+      <div class="admin-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon-wrapper">
+            <span class="pearl-symbol">⚪</span>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">PEARLS</span>
+            <span class="brand-subtitle">STORE MANAGER PORTAL</span>
+          </div>
+        </a>
+      </div>
+      <div class="admin-actions">
+        <span class="hub-pill">📍 Accra Delivery Hub</span>
+        <button class="btn btn-secondary btn-sm" id="logoutBtn" onclick="admin.logout()" style="display: none;">🔒 Logout</button>
+        <a href="index.html" class="btn btn-secondary btn-sm">← Back to Storefront</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Manager PIN Authentication Modal -->
+  <div id="adminAuthOverlay" class="admin-auth-overlay">
+    <div class="auth-card">
+      <div class="auth-icon">🔒</div>
+      <h2>Store Manager Access</h2>
+      <p>Enter the store manager PIN to access Accra customer orders and delivery logs.</p>
+      <form id="adminLoginForm" onsubmit="admin.handleLogin(event)">
+        <div class="form-group full-width">
+          <label for="adminPinInput">Manager PIN / Password</label>
+          <input type="password" id="adminPinInput" required placeholder="Enter PIN (Default: pearls055)" autocomplete="current-password">
+        </div>
+        <div id="loginErrorMsg" class="auth-error-msg" style="display: none;"></div>
+        <button type="submit" class="btn btn-primary btn-block" id="loginSubmitBtn">Unlock Dashboard</button>
+      </form>
+      <a href="index.html" class="auth-back-link">← Return to Customer Storefront</a>
+    </div>
+  </div>
+
+  <main class="container admin-main">
+    <div class="admin-topbar">
+      <div>
+        <h1 class="admin-title">Orders & Delivery Management</h1>
+        <p class="admin-subtitle">Live tracking of Accra customer orders, delivery dispatches, and WhatsApp confirmations.</p>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="admin.refreshData()">
+        🔄 Refresh Orders
+      </button>
+    </div>
+
+    <!-- KPIs Metric Cards -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <span class="metric-label">Total Orders</span>
+        <strong class="metric-val" id="metricTotalOrders">0</strong>
+        <span class="metric-sub">Lifetime orders</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Gross Revenue</span>
+        <strong class="metric-val highlight" id="metricTotalRevenue">GH₵ 0</strong>
+        <span class="metric-sub">Sales in Ghanaian Cedi</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Pending Deliveries</span>
+        <strong class="metric-val warning" id="metricPendingOrders">0</strong>
+        <span class="metric-sub">Needs processing / dispatch</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Completed Deliveries</span>
+        <strong class="metric-val success" id="metricCompletedOrders">0</strong>
+        <span class="metric-sub">Successfully delivered</span>
+      </div>
+    </div>
+
+    <!-- Filter toolbar -->
+    <div class="orders-toolbar">
+      <div class="filter-pills">
+        <button class="filter-pill active" data-status="All" onclick="admin.filterStatus('All', this)">All Orders</button>
+        <button class="filter-pill" data-status="Pending" onclick="admin.filterStatus('Pending', this)">Pending</button>
+        <button class="filter-pill" data-status="Confirmed" onclick="admin.filterStatus('Confirmed', this)">Confirmed</button>
+        <button class="filter-pill" data-status="Out for Delivery" onclick="admin.filterStatus('Out for Delivery', this)">Out for Delivery</button>
+        <button class="filter-pill" data-status="Delivered" onclick="admin.filterStatus('Delivered', this)">Delivered</button>
+      </div>
+      <div class="search-wrap">
+        <input type="text" id="orderSearchInput" placeholder="Search by name, phone or tracking code..." oninput="admin.handleSearch(this.value)">
+      </div>
+    </div>
+
+    <!-- Orders Table Card -->
+    <div class="orders-card">
+      <div class="table-responsive">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>Tracking Code</th>
+              <th>Customer & Phone</th>
+              <th>Accra Location</th>
+              <th>Items</th>
+              <th>Payment & Total</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody">
+            <tr>
+              <td colspan="7" class="text-center" style="padding: 40px;">Loading orders...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

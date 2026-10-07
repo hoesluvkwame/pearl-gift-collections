@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ord_1791298218830",
+    "trackingCode": "PGC-2026-49SVB",
+    "customerName": "Kofi Annan",
+    "phone": "055 878 8083",
+    "deliveryAddress": "East Legon, Near American House",
+    "deliveryZone": "East Legon / Airport / Dzorwulu / Roman Ridge",
+    "deliveryFee": 30,
+    "subtotal": 680,
+    "grandTotal": 710,
+    "paymentMethod": "Cash on Delivery (Accra)",
+    "notes": "Please call before arrival",
+    "items": [
+      {
+        "productId": "lefon-electric-pan",
+        "name": "LEFON Multifunctional Electric Pan (32CM / 8L)",
+        "price": 680,
+        "quantity": 1,
+        "selectedColor": "Rose Gold",
+        "lineTotal": 680
+      }
+    ],
+    "status": "Pending",
+    "createdAt": "2026-10-06T14:50:18.830Z",
+    "updatedAt": "2026-10-06T15:10:31.424Z"
+  }
+]
